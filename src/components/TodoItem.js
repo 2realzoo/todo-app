@@ -9,9 +9,10 @@ const TodoItem = ({ todo }) => {
         check ?
             setCheck(!check)
             : setCheck(!check)
-    }
+    };
+    
     useEffect(() => {
-        fetch(`http://localhost:3001/todos/${id}` ,{
+        fetch(`http://localhost:3001/todos/${id}`, {
             method: "PATCH",
             body: JSON.stringify({
                 isDone: false
@@ -20,12 +21,17 @@ const TodoItem = ({ todo }) => {
                 'Content-type': 'application/json; charset=UTF-8',
             }
         })
-    }, [check])
+    }, [check]);
+
+    const handleDelete = () => {
+
+    };
     return (
         <div className="todo_item">
             <div className="todo_wrapper">
                 <h5 className="title">{title}</h5>
-                {check? <div className="checked" onClick={handleClickCheck}>✅</div> : <div className="not-checked" onClick={handleClickCheck}>🟩</div>}
+                {check ? <div className="checked" onClick={handleClickCheck}>✅</div> : <div className="not-checked" onClick={handleClickCheck}>🟩</div>}
+                <div onClick={handleDelete}>❌</div>
             </div>
             <div className={`content ${activeContent ? '' : 'hide'}`}>{content}</div>
         </div>

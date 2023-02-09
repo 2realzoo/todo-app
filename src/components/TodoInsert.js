@@ -14,11 +14,10 @@ const TodoInsert = ({ todos }) => {
     const { dateReducer } = useSelector(state => state);
     const { fullDate, year, month, date, day } = dateReducer;
     const handleSubmit = e => {
-        e.preventDefault();
         fetch(`http://localhost:3001/todos`, {
             method: 'POST',
             body: JSON.stringify({
-                id: todos.length + 2,
+                id: todos.length + 1,
                 date: {
                     fullDate,
                     year,
