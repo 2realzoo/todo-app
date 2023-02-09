@@ -1,20 +1,16 @@
 import React, { useEffect, useState } from "react";
-import Header from "./header";
-import TodoInsert from "./TodoInsert";
-import TodoList from "./TodoList";
+import useFetch from "../util/useFetch.js";
+import Header from "./header.js";
+import TodoInsert from "./TodoInsert.js";
+import TodoList from "./TodoList.js";
 
 const Template = () => {
-    const [todos, setTodos] = useState([]);
-    useEffect(() => {
-        fetch('http://localhost:3001/todos')
-            .then(res => res.json())
-            .then(data => setTodos(data));
-    },[])
+    const todos = useFetch('http://localhost:3001/todos')
     return (
         <div>
-            <Header/>
-            <TodoList todos={todos}/>
-            <TodoInsert/>
+            <Header todos={todos} />
+            <TodoList todos={todos} />
+            <TodoInsert todos={todos} />
         </div>
     )
 }

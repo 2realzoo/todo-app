@@ -1,25 +1,56 @@
 {
-    "todos": [
-        {
-            "id": 1,
-            "date":"2023-02-08T01:55:36.000Z",
-            "title": "세탁물 맡기러 가기",
-            "content": "세탁소 6시에 문 닫음",
-            "isDone": true
-        },
-        {
-            "id": 2,
-            "date":"2023-02-09T01:50:36.000Z",
-            "title": "todo앱 완성하기",
-            "content": "남은 것 : CSS",
-            "isDone": false
-        },
-        {
-            "id": 3,
-            "date":"2023-02-09T01:55:36.000Z",
-            "title": "토이프로젝트 배포하기",
-            "content": "오류 발생 ㅠㅠ",
-            "isDone": false
-        }
-    ]
+  "todos": [
+    {
+      "id": 1,
+      "date": {
+        "fullDate": "2023-02-08T01:55:36.000Z",
+        "year": 2023,
+        "month": 1,
+        "date": 8,
+        "day": "수"
+      },
+      "title": "세탁물 맡기러 가기",
+      "content": "세탁소 6시에 문 닫음",
+      "isDone": true
+    },
+    {
+      "id": 2,
+      "date": {
+        "fullDate": "2023-02-09T01:55:36.000Z",
+        "year": 2023,
+        "month": 1,
+        "date": 9,
+        "day": "목"
+      },
+      "title": "todo앱 완성하기",
+      "content": "남은 것 : CSS",
+      "isDone": false
+    },
+    {
+      "id": 3,
+      "date": {
+        "fullDate": "2023-02-10T01:55:36.000Z",
+        "year": 2023,
+        "month": 1,
+        "date": 10,
+        "day": "금"
+      },
+      "title": "토이프로젝트 배포하기",
+      "content": "오류 발생 ㅠㅠ",
+      "isDone": false
+    },
+    {
+      "id": 4,
+      "date": {
+        "fullDate": "2023-02-09T06:07:29.438Z",
+        "year": 2023,
+        "month": 1,
+        "date": 9,
+        "day": "목"
+      },
+      "title": "",
+      "content": "",
+      "isDone": false
+    }
+  ]
 }

@@ -1,12 +1,33 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
+import './TodoItem.css'
 
 const TodoItem = ({ todo }) => {
     const { id, date, title, content, isDone } = todo;
+    const [activeContent, setActiveContent] = useState(false);
+    const [check, setCheck] = useState(isDone);
+    const handleClickCheck = () => {
+        check ?
+            setCheck(!check)
+            : setCheck(!check)
+    }
+    useEffect(() => {
+        fetch(`http://localhost:3001/todos/${id}` ,{
+            method: "PATCH",
+            body: JSON.stringify({
+                isDone: false
+            }),
+            headers: {
+                'Content-type': 'application/json; charset=UTF-8',
+            }
+        })
+    }, [check])
     return (
         <div className="todo_item">
-            <h5 className="title">{title}</h5>
-            {isDone? <div className="checked">✅</div> : <div className="not-checked">🟩</div>}
-            <div className="todo_text">{content}</div>
+            <div className="todo_wrapper">
+                <h5 className="title">{title}</h5>
+                {check? <div className="checked" onClick={handleClickCheck}>✅</div> : <div className="not-checked" onClick={handleClickCheck}>🟩</div>}
+            </div>
+            <div className={`content ${activeContent ? '' : 'hide'}`}>{content}</div>
         </div>
     )
 }
