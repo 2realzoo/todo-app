@@ -4,6 +4,10 @@ import './TodoItem.css'
 const TodoItem = ({ todo }) => {
     const { id, date, title, content, isDone } = todo;
     const [activeContent, setActiveContent] = useState(false);
+    const handleHideContent = () => {
+        setActiveContent(!activeContent);
+    }
+
     const [check, setCheck] = useState(isDone);
     const handleClickCheck = () => {
         fetch(`http://localhost:3001/todos/${id}`, {
@@ -28,10 +32,13 @@ const TodoItem = ({ todo }) => {
         window.location.reload();
     };
     return (
-        <div className="todo_item">
-            <div className="todo_wrapper">
-                <h5 className="title">{title}</h5>
-                {check ? <div className="checked" onClick={handleClickCheck}>✅</div> : <div className="not-checked" onClick={handleClickCheck}>🟩</div>}
+        <div className="todo-item">
+            <div className="todo-wrapper">
+                <div className="title-wrapper" onClick={handleHideContent}>
+                    <div className="pin-icon">📌</div>
+                    <div className="title">{title}</div>
+                </div> 
+                {check ? <div className="checkbox" onClick={handleClickCheck}>✅</div> : <div className="checkbox" onClick={handleClickCheck}>🟩</div>}
                 <div onClick={handleDelete}>❌</div>
             </div>
             <div className={`content ${activeContent ? '' : 'hide'}`}>{content}</div>
