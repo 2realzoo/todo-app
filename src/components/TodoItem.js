@@ -6,22 +6,17 @@ const TodoItem = ({ todo }) => {
     const [activeContent, setActiveContent] = useState(false);
     const [check, setCheck] = useState(isDone);
     const handleClickCheck = () => {
-        check ?
-            setCheck(!check)
-            : setCheck(!check)
-    };
-    
-    useEffect(() => {
         fetch(`http://localhost:3001/todos/${id}`, {
             method: "PATCH",
             body: JSON.stringify({
-                isDone: false
+                isDone: !check
             }),
             headers: {
                 'Content-type': 'application/json; charset=UTF-8',
             }
-        })
-    }, [check]);
+        });
+        setCheck(!check);
+    };
 
     const handleDelete = () => {
         fetch(`http://localhost:3001/todos/${id}`, {
