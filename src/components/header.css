@@ -1,10 +1,14 @@
 .header_wrapper {
     display: flex;
     flex-direction: row;
-    align-items: center;
+    align-items: flex-start;
     justify-content: center;
+    margin: 1.5vw;
+    font-size: 30px;
+    font-weight: 600;
 }
 .header_wrapper >button {
     border: none;
     background: none;
+    font-size: 30px;
 }

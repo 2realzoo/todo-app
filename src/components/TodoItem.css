@@ -1,9 +1,39 @@
-.todo_wrapper {
+.todo-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.todo-wrapper {
     display: flex;
     flex-direction: row;
     align-items: center;
     justify-content: center;
+    margin-top: 0.5vw;
+    margin-bottom: 0.5vw;
+}
+.title-wrapper {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-end;
+}
+.pin-icon {
+    font-size: 22px;
+}
+.title {
+    margin-left: 0.5vw;
+    margin-right: 4vw;
+}
+.checkbox {
+    margin-right: 1.5vw;
 }
 .hide {
     display: none;
+}
+.content {
+    padding: 0.7vw;
+    width: fit-content;
+    background-color: #f4eee6;
+    border-radius: 10px;
+    font-size: 20px;
+    font-weight: 300;
 }

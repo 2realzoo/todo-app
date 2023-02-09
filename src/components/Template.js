@@ -1,4 +1,5 @@
-import React, { useEffect, useState } from "react";
+import React from "react";
+import './Template.css'
 import useFetch from "../util/useFetch.js";
 import Header from "./header.js";
 import TodoInsert from "./TodoInsert.js";
@@ -9,8 +10,8 @@ const Template = () => {
     return (
         <div>
             <Header todos={todos} />
-            <TodoList todos={todos} />
             <TodoInsert todos={todos} />
+            <TodoList todos={todos} />
         </div>
     )
 }

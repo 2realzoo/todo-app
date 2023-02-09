@@ -1,4 +1,5 @@
 import React from "react";
+import './TodoList.css'
 import { useSelector } from "react-redux";
 import { dateFilter } from "./filters";
 import TodoItem from "./TodoItem";

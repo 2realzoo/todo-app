@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { useSelector } from "react-redux";
+import './TodoInsert.css';
 
 const TodoInsert = ({ todos }) => {
     const [title, setTitle] = useState("");
@@ -17,7 +18,7 @@ const TodoInsert = ({ todos }) => {
         fetch(`http://localhost:3001/todos`, {
             method: 'POST',
             body: JSON.stringify({
-                id: todos.length + 1,
+                id: todos[todos.length - 1].id + 1,
                 date: {
                     fullDate,
                     year,
@@ -35,16 +36,18 @@ const TodoInsert = ({ todos }) => {
     }
     return (
         <div>
-            <form onSubmit={handleSubmit}>
-                <>
-                    <label>해야 할 일</label>
-                    <input onChange={handleTypeTitle} type="text"></input>
-                </>
-                <>
-                    <label>메모</label>
-                    <input onChange={handleTypeContent} type="text"></input>
-                </>
-                <input type="submit" value="완료" onSubmit={handleSubmit}></input>
+            <form className="form-wrapper" onSubmit={handleSubmit}>
+                <div className="input-wrapper">
+                    <div className="title-input-wrapper">
+                        <label>해야 할 일</label>
+                        <input onChange={handleTypeTitle} type="text"></input>
+                    </div>
+                    <div className="content-input-wrapper">
+                        <label>메모</label>
+                        <input onChange={handleTypeContent} type="text"></input>
+                    </div>
+                </div>            
+                <input className="submit-btn" type="submit" value="완료" onSubmit={handleSubmit}></input>
             </form>
             
         </div>
