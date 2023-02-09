@@ -24,7 +24,13 @@ const TodoItem = ({ todo }) => {
     }, [check]);
 
     const handleDelete = () => {
-
+        fetch(`http://localhost:3001/todos/${id}`, {
+            method: "DELETE",
+            headers: {
+                'Content-type': 'application/json; charset=UTF-8',
+            }
+        });
+        window.location.reload();
     };
     return (
         <div className="todo_item">

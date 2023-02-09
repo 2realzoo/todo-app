@@ -38,32 +38,6 @@
       "title": "토이프로젝트 배포하기",
       "content": "오류 발생 ㅠㅠ",
       "isDone": false
-    },
-    {
-      "id": 4,
-      "date": {
-        "fullDate": "2023-02-07T15:00:00.000Z",
-        "year": 2023,
-        "month": 1,
-        "date": 8,
-        "day": "수"
-      },
-      "title": "앙영",
-      "content": "ㅣㅇ잉",
-      "isDone": false
-    },
-    {
-      "id": 5,
-      "date": {
-        "fullDate": "2023-02-08T15:00:00.000Z",
-        "year": 2023,
-        "month": 1,
-        "date": 9,
-        "day": "목"
-      },
-      "title": "일찍 잠들기",
-      "content": "",
-      "isDone": false
     }
   ]
 }
